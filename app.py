@@ -57,6 +57,7 @@ def inicio():
                 text-align: center;
                 padding: 55px 15px 50px;
             }
+
             header h1 {
                 color: #E8D4A2;
                 font-family: "Palatino Linotype", "Book Antiqua", Georgia, serif;
@@ -122,6 +123,7 @@ def inicio():
                 margin: 0 0 14px;
                 text-transform: uppercase;
             }
+
             .linea-categoria {
                 width: 55px;
                 height: 2px;
@@ -248,6 +250,25 @@ def inicio():
                 margin-top: 10px;
             }
 
+            .whatsapp {
+                display: block;
+                width: 100%;
+                margin-top: 20px;
+                padding: 15px 18px;
+                background-color: #172820;
+                color: #E8D4A2;
+                border: 1px solid #B08D57;
+                border-radius: 8px;
+                font-size: 15px;
+                font-weight: bold;
+                letter-spacing: 0.3px;
+            }
+
+            .whatsapp:hover {
+                background-color: #B08D57;
+                color: #172820;
+            }
+
             footer {
                 background-color: #172820;
                 color: #E8D4A2;
@@ -360,6 +381,10 @@ def inicio():
             <button class="vaciar" onclick="vaciarCarrito()">
                 Vaciar carrito
             </button>
+
+            <button class="whatsapp" onclick="finalizarPorWhatsApp()">
+                Finalizar pedido por WhatsApp
+            </button>
         </section>
 
         <footer>
@@ -406,6 +431,49 @@ def inicio():
             function vaciarCarrito() {
                 carrito = [];
                 actualizarCarrito();
+            }
+
+            function finalizarPorWhatsApp() {
+                if (carrito.length === 0) {
+                    alert(
+                        "Tu carrito está vacío. Agrega algún producto primero."
+                    );
+                    return;
+                }
+
+                let mensaje =
+                    "¡Hola! Quiero hacer un pedido en AUREN:\\n\\n";
+
+                let cantidades = {};
+
+                carrito.forEach(function(nombre) {
+                    cantidades[nombre] =
+                        (cantidades[nombre] || 0) + 1;
+                });
+
+                for (let nombre in cantidades) {
+                    mensaje += nombre + " x" + cantidades[nombre] +
+                        " - S/ " +
+                        (
+                            precios[nombre] * cantidades[nombre]
+                        ).toFixed(2) +
+                        "\\n";
+                }
+
+                let total = 0;
+
+                carrito.forEach(function(nombre) {
+                    total += precios[nombre];
+                });
+
+                mensaje += "\\nTotal: S/ " + total.toFixed(2);
+
+                let telefono = "51987827776";
+
+                let enlace = "https://wa.me/" + telefono +
+                    "?text=" + encodeURIComponent(mensaje);
+
+                window.open(enlace, "_blank");
             }
         </script>
     </body>
