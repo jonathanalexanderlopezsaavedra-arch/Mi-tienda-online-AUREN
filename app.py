@@ -37,6 +37,7 @@ def inicio():
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="google-site-verification" content="_nflRzVJg-8Be9vrd76cF4XgiQyeoAG71vheiwRZ8HY">
         <title>AUREN | Tienda Online</title>
 
         <style>
