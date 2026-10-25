@@ -55,23 +55,26 @@ def inicio():
             header {
                 background: linear-gradient(135deg, #172820, #243D30);
                 text-align: center;
-                padding: 45px 15px;
+                padding: 55px 15px 50px;
             }
-
             header h1 {
                 color: #E8D4A2;
-                font-family: Georgia, "Times New Roman", serif;
-                font-size: 42px;
+                font-family: "Palatino Linotype", "Book Antiqua", Georgia, serif;
+                font-size: 48px;
+                font-style: italic;
                 font-weight: normal;
-                letter-spacing: 8px;
+                letter-spacing: 5px;
+                text-shadow: 0 2px 12px rgba(232, 212, 162, 0.18);
                 margin: 0 0 15px;
             }
 
             header p {
                 color: #F5F3ED;
-                font-size: 15px;
-                letter-spacing: 1px;
+                font-size: 14px;
+                letter-spacing: 2px;
+                line-height: 1.8;
                 margin: 0;
+                opacity: 0.92;
             }
 
             .linea-elegante {
@@ -111,14 +114,14 @@ def inicio():
 
             .titulo-categoria {
                 color: #172820;
-                font-family: Georgia, "Times New Roman", serif;
-                font-size: 28px;
+                font-family: "Palatino Linotype", "Book Antiqua", Georgia, serif;
+                font-size: 30px;
                 font-weight: normal;
-                letter-spacing: 4px;
+                letter-spacing: 6px;
                 text-align: center;
-                margin: 0 0 10px;
+                margin: 0 0 14px;
+                text-transform: uppercase;
             }
-
             .linea-categoria {
                 width: 55px;
                 height: 2px;
@@ -135,19 +138,26 @@ def inicio():
             }
 
             .producto {
-                background-color: #FFFFFF;
-                border: 1px solid #E8E4DA;
-                border-radius: 14px;
-                padding: 20px;
+                position: relative;
+                background: linear-gradient(
+                    180deg, #FFFFFF 0%, #FCFAF5 100%
+                );
+                border: 1px solid #E5D9C2;
+                border-radius: 18px;
+                padding: 22px;
                 text-align: center;
-                box-shadow: 0 4px 14px rgba(23, 40, 32, 0.08);
-                transition: transform 0.3s, box-shadow 0.3s;
+                box-shadow: 0 5px 18px rgba(23, 40, 32, 0.07);
+                transition:
+                    transform 0.3s ease,
+                    box-shadow 0.3s ease,
+                    border-color 0.3s ease;
                 overflow: hidden;
             }
 
             .producto:hover {
-                transform: translateY(-4px);
-                box-shadow: 0 8px 22px rgba(23, 40, 32, 0.14);
+                transform: translateY(-6px);
+                border-color: #B08D57;
+                box-shadow: 0 14px 30px rgba(23, 40, 32, 0.13);
             }
 
             .imagen {
@@ -165,23 +175,30 @@ def inicio():
                 height: 100%;
                 object-fit: contain;
                 object-position: center;
+                transition: transform 0.3s ease;
+            }
+
+            .producto:hover img {
+                transform: scale(1.04);
             }
 
             .nombre-producto {
-                font-family: Georgia, "Times New Roman", serif;
-                font-size: 23px;
+                font-family: "Palatino Linotype", "Book Antiqua", Georgia, serif;
+                font-size: 22px;
                 font-weight: normal;
                 color: #172820;
-                letter-spacing: 0.5px;
-                margin: 20px 0 12px;
+                letter-spacing: 0.3px;
+                line-height: 1.4;
+                margin: 24px 0 8px;
             }
 
             .precio {
-                font-family: Georgia, "Times New Roman", serif;
-                font-size: 24px;
-                font-weight: bold;
+                font-family: "Palatino Linotype", "Book Antiqua", Georgia, serif;
+                font-size: 20px;
+                font-weight: normal;
                 color: #B08D57;
-                margin: 15px 0 20px;
+                letter-spacing: 0.5px;
+                margin: 12px 0 18px;
             }
 
             button {
@@ -192,12 +209,18 @@ def inicio():
                 border-radius: 8px;
                 cursor: pointer;
                 font-size: 14px;
-                transition: background-color 0.3s, color 0.3s;
+                transition:
+                    background-color 0.3s ease,
+                    color 0.3s ease,
+                    transform 0.3s ease,
+                    box-shadow 0.3s ease;
             }
 
             button:hover {
                 background-color: #E8D4A2;
                 color: #172820;
+                transform: translateY(-2px);
+                box-shadow: 0 5px 12px rgba(23, 40, 32, 0.12);
             }
 
             .carrito {
